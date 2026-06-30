@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Gestión y Documentación de Mascotas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Encabezado Semántico -->
+    <header class="app-header">
+        <div class="header-brand">
+            <h1>Portal de Gestión de Mascotas</h1>
+        </div>
+    </header>
+
+    <main class="app-container">
+        
+        <!-- Propósito de la API (Explicación obligatoria para TechSolutions) -->
+        <section class="card-section">
+            <h2>Panel Principal</h2>
+            <p>Esta aplicación ha sido diseñada para la empresa <strong>TechSolutions</strong>. Su propósito es ofrecer una API REST moderna para gestionar de manera centralizada la información del catálogo de mascotas de libre elección, facilitando operaciones CRUD completas en arquitecturas cliente-servidor.</p>
+        </section>
+
+        <!-- Formulario CRUD de tu Stitch -->
+        <section class="card-section">
+            <div class="card-header">
+                <h3 id="form-title">Registrar Nueva Mascota</h3>
+            </div>
+            
+            <form id="pet-form">
+                <input type="hidden" id="pet-id">
+
+                <div class="form-group">
+                    <label for="pet-name">Nombre</label>
+                    <input type="text" id="pet-name" placeholder="Ej. Toby" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pet-species">Especie</label>
+                    <input type="text" id="pet-species" placeholder="Ej. Perro, Gato" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pet-age">Edad</label>
+                    <input type="number" id="pet-age" placeholder="Ej. 3" min="0" required>
+                </div>
+
+                <button type="submit" id="btn-submit" class="btn-submit">
+                    <span id="btn-text">Registrar Mascota</span>
+                </button>
+            </form>
+        </section>
+
+        <!-- Listado Dinámico con el Contador de tu Stitch -->
+        <section class="card-section">
+            <div class="card-header flex-header">
+                <h3>Mis Mascotas</h3>
+                <span id="counter-badge" class="counter-badge">0 Registros</span>
+            </div>
+
+            <div id="pets-list">
+                <p class="empty-list">No hay mascotas registradas.</p>
+            </div>
+        </section>
+
+        <!-- Sección Completa de Documentación de Endpoints (Exigido en la Rúbrica) -->
+        <section class="card-section docs-section">
+            <div class="card-header">
+                <h3>Documentación Técnica de Endpoints</h3>
+            </div>
+            <p>La API gestiona la información mediante los siguientes métodos y estructuras:</p>
+
+            <div class="doc-endpoint">
+                <span class="badge get">GET</span> <code>/pets</code>
+                <p class="doc-info"><strong>Salida:</strong> Devuelve la lista completa de todas las mascotas en formato JSON.</p>
+                <pre><code>[{"id": 1, "name": "Toby", "species": "Perro", "age": 3}]</code></pre>
+            </div>
+
+            <div class="doc-endpoint">
+                <span class="badge post">POST</span> <code>/pets</code>
+                <p class="doc-info"><strong>Entrada:</strong> Requiere un objeto JSON con las propiedades de la mascota.</p>
+                <pre><code>{"name": "string", "species": "string", "age": "number"}</code></pre>
+            </div>
+
+            <div class="doc-endpoint">
+                <span class="badge delete">DELETE</span> <code>/pets/{id}</code>
+                <p class="doc-info"><strong>Parámetro:</strong> Recibe el identificador numérico único (ID) en la URL para eliminar el registro.</p>
+                <pre><code>{"message": "Pet deleted successfully"}</code></pre>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página semántico -->
+    <footer class="app-footer">
+        <p>© 2026 Portal de Gestión de Mascotas — TechSolutions</p>
+    </footer>
+
+    <!-- Cargamos tu JavaScript local nativo sin salir a internet -->
+    <script src="js/app.js"></script>
+</body>
+</html>
