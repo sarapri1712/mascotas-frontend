@@ -24,7 +24,7 @@ async function loadPets() {
 }
 
 function renderPets(pets) {
-    // Actualizar el contador flotante de tu Stitch
+    
     counterBadge.textContent = `${pets.length} Registro${pets.length !== 1 ? 's' : ''}`;
 
     if (!pets || pets.length === 0) {
